@@ -1,0 +1,70 @@
+import numpy as np
+import pandas as pd
+import os
+import urllib
+
+urllib = "http://covid19.who.int/WHO-COVID-19-global-data.csv"
+file_path = os.path.join("data","covid")
+
+os.makedirs(file_path, exist_ok=True)
+csv_path = os.path.join(file_path,"WHO-COVID-19-global-data.csv")
+urllib.request.urlretrieve(url,csv_path)
+
+df = pd.read_csv(csv_path)
+
+df 
+
+df_index = df.index
+df_index
+
+df_cols = df.columns
+df_cols
+
+df_index.values
+
+df.values
+
+df.dtypes
+
+df.shape
+
+df.head()
+
+df.tail()
+
+df.info()
+
+df.describe()
+
+df["Country"]
+
+df["Country"].unique()
+
+df.columns = [col.strip() for col in df.columns]
+df.columns
+
+df.Country
+
+df.loc[1:4,'Country']
+df.loc[1:8,['Country','New_cases']]
+df.Country == 'United States of America'
+df[df.Country == 'United States of America'] 
+df[df.New_deaths > 1000]
+df.loc[df.New_deaths > 1000, ['New_deaths','Country']]
+df.loc[(df.New_deaths > 1000) & (df.Country_code == 'US'), ['Date_Reported','Country','New_cases','New_deaths','Cumulative_deaths']
+
+df.loc[df.New_deaths > 1000, ['New_deaths','Country']]
+df.loc[(df.New_deaths > 1000) & (df.Country_code == 'US'),
+
+
+
+
+
+
+
+
+
+
+
+
+
